@@ -10,7 +10,7 @@ router.get('/', async (req, res)=>{
         res.send({
             status: 200,
             success: true,
-            data: variations
+            data: variations,
         })
     }catch(err){
         res.send({

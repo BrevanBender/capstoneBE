@@ -1,5 +1,6 @@
 const express = require('express')
 const res = require('express/lib/response')
+const session = require("express-session");
 const bcrypt = require('bcryptjs')
 const User = require('../models/user')
 const router = express()
@@ -38,7 +39,8 @@ router.post("/login", async (req, res) => {
           res.send({
             status: 200,
             success: true,
-            data: possibleUser
+            data: possibleUser,
+            session: session
         })
         } else {
           res.send({
